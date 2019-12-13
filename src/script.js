@@ -39,33 +39,33 @@ function flipCard() {
   }
 }
 
-class Game {
-  constructor (totalTime) {
-    this.totalTime = totalTime;
-    this.timer = document.getElementById('time-remaining');
-  }
+// class Game {
+//   constructor (totalTime) {
+//     this.totalTime = totalTime;
+//     this.timer = document.getElementById('time-remaining');
+//   }
 
-  start() {
-    this.cardCheck = null;
-    setTimeout(() => {
-      this.countdown = startCount();
-    }, 500)
-  }
+//   start() {
+//     this.cardCheck = null;
+//     setTimeout(() => {
+//       this.countdown = startCount();
+//     }, 500)
+//   }
 
-  startCount() {
-    return setInterval(() => {
-        this.timeRemaining--;
-        this.timer.innerText = this.timeRemaining;
-        if(this.timeRemaining === 0)
-            this.gameOver();
-    }, 1000);
-}
+//   startCount() {
+//     return setInterval(() => {
+//         this.timeRemaining--;
+//         this.timer.innerText = this.timeRemaining;
+//         if(this.timeRemaining === 0)
+//             this.gameOver();
+//     }, 1000);
+// }
 
-gameOver() {
-  clearInterval(this.countdown);
-  document.getElementById('game-over-text').classList.add('visible');
-}
-}
+// gameOver() {
+//   clearInterval(this.countdown);
+//   document.getElementById('game-over-text').classList.add('visible');
+// }
+// }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
