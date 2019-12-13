@@ -8,10 +8,12 @@ function flipCard() {
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
+
     // first click
     hasFlippedCard = true;
     firstCard = this;
   } else {
+    
     // second click
     hasFlippedCard = false;
     secondCard = this;
@@ -28,7 +30,7 @@ function flipCard() {
       setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-      }, 1500);
+      }, 500);
     }
 
     if (count == 6) {
@@ -66,3 +68,7 @@ gameOver() {
 }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+module.exports = {
+  flipCard
+}
