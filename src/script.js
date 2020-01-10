@@ -1,10 +1,14 @@
 const cards = document.querySelectorAll('.game-card');
 
 let hasFlippedCard = false;
+let setBoard = false;
 let firstCard, secondCard;
 let count = 0;
 
 function flipCard() {
+  if (setBoard) return;
+  if (this === firstCard) return;
+
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
@@ -23,7 +27,8 @@ function flipCard() {
       // matched
       firstCard.removeEventListener('click', flipCard);
       secondCard.removeEventListener('click', flipCard);
-      count++;
+      victoryMessage();
+      board ();
     } else {
 
       // not a match
@@ -33,11 +38,32 @@ function flipCard() {
       }, 500);
     }
 
-    if (count == 6) {
-      alert("Victory!");
-    }
+    // if (count == 6) {
+    //   alert("Victory!");
+    // }
   }
 }
+
+// message
+function victoryMessage() {
+  if (count == 6) {
+    alert("NAILED IT!");
+  }
+}
+
+// Lock board
+function board() {
+  [hasFlippedCard, setBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+// shuffle cards
+function shuffle () {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+};
 
 // class Game {
 //   constructor (totalTime) {
