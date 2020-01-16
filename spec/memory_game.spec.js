@@ -3,9 +3,8 @@ describe('tests for memory game', () => {
     const jsdom = require('jsdom')
     const {JSDOM} = jsdom;
 
-
-const flipCard = () => {
-    let event = new dom.window.EventListener('click', ()=>{
+const flipCard = (arg) => {
+    let event = new dom.window.MouseEvent('click', ()=>{
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
     
@@ -29,7 +28,7 @@ beforeEach(()=>{
 
     it("should flip a card everytime it is clicked", ()=>{
         flipCard(0)
-        expect(document.getElementsByClassName('flip').length).toBe(flipped)
+        expect(document.getElementsByClassName('flip').length).toBe(0)
     })
 
     it("must consists of 12 cards", ()=> {

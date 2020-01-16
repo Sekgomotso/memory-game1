@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.game-card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let count = 0;
+let startBtn = document.getElementsByClassName("strtBtn");
 
 function flipCard() {
   if (this === firstCard) return;
@@ -26,6 +27,11 @@ function flipCard() {
     victoryMessage();
   
 }
+
+// // start game
+// function startBtn() {
+//   startBtn.style.display = "none";
+// }
 
 function check() {
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
