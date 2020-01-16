@@ -24,10 +24,6 @@ function flipCard() {
 
     check();
     victoryMessage();
-
-    // if (count == 6) {
-    //   alert("Victory!");
-    // }
   
 }
 
@@ -92,5 +88,11 @@ function shuffle () {
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 module.exports = {
-  flipCard
+  flipCard,
+  check,
+  removeCard,
+  unflipCards,
+  victoryMessage,
+  board,
+  shuffle
 }
