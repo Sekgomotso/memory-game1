@@ -28,11 +28,6 @@ function flipCard() {
   
 }
 
-// // start game
-// function startBtn() {
-//   startBtn.style.display = "none";
-// }
-
 function check() {
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
 
@@ -65,10 +60,12 @@ function unflipCards() {
 
 // message
 function victoryMessage() {
-  if (count == 6) {
-    alert("NAILED IT!");
-    shuffle();
-  }
+  setTimeout(()=> {
+    if(count == 6) {
+      alert("NAILED IT!");
+      shuffle();
+    }
+  }, 500);
 }
 
 // Lock board
