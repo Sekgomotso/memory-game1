@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -63,7 +63,7 @@
     </div>
 
     <div class="footer">
-      <button class="strtBtn">Play</button>
+      <button>Play</button>
       <span id = "time-remaining">Time: 30</span>
     </div>
   </section>
@@ -71,3 +71,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+`
+
+module.exports = html;
