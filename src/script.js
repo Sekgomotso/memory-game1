@@ -3,7 +3,6 @@ const cards = document.querySelectorAll('.game-card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let count = 0;
-let startBtn = document.getElementsByClassName("strtBtn");
 
 function flipCard() {
   if (this === firstCard) return;
@@ -81,12 +80,6 @@ function shuffle () {
     card.style.order = randomPos;
   });
 };
-
-// gameOver() {
-//   clearInterval(this.countdown);
-//   document.getElementById('game-over-text').classList.add('visible');
-// }
-// }
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
