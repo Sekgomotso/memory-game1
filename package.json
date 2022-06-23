@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/Sekgomotso/memory-game1#readme",
   "devDependencies": {
-    "jsdom": "^15.2.1"
+    "jsdom": "^16.5.0"
   }
 }
